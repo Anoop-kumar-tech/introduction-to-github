@@ -1,0 +1,12 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+entity FA is
+    Port ( A,B,Cin : in STD_LOGIC;
+           Sout,Cout : out STD_LOGIC);
+end FA;
+architecture Behavioral of FA is
+begin
+Sout<=(not A and not B and Cin) or (not A and B and not Cin)or (A and not B and not Cin)or (A and B and Cin);
+Cout<= (A and B) or (B and Cin) or (Cin and A);
+
+end Behavioral;
